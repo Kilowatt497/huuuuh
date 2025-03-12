@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message for Patricia</title>
+    <style>
+        body {
+            background-color: #e3f2fd; /* Light blue background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            font-family: cursive; /* Fallback to cursive if Google Fonts fails */
+            font-size: 24px;
+            color: #333;
+            max-width: 600px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+    <script>
+        const message = "Dear Patricia,<br><br>I just wanted to take a moment to tell you how much I appreciate our friendship. You always bring a smile to my face and make my days brighter. Thank you for being such an amazing friend. Here's to many more adventures together!<br><br>With love,<br>Raji";
+        const words = message.split(" ");
+        let index = 0;
+
+        // Automatically start typing the message when the page loads
+        window.onload = function() {
+            typeMessage();
+        };
+
+        function typeMessage() {
+            if (index < words.length) {
+                document.getElementById("message").innerHTML += words[index];
+                if (index < words.length - 1) {
+                    document.getElementById("message").innerHTML += " ";
+                }
+                index++;
+                setTimeout(typeMessage, 200); /* 200ms delay per word */
+            }
+        }
+    </script>
+</body>
+</html>
